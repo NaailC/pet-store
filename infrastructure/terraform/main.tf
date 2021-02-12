@@ -25,3 +25,17 @@ module "k8s" {
   client_key            = "${base64decode(module.cluster.client_key)}"
   cluster_ca_certificate= "${base64decode(module.cluster.cluster_ca_certificate)}"  
 }
+
+module "virtual_network" {
+  source = "./modules/vnet"
+  resource_group = azurerm_resource_group.main.name
+  location = var.location
+  project_name = var.project_name
+}
+
+module "virtual_machines" {
+  source = "./modules/vm"
+  resource_group = azurerm_resource_group.main.name
+  location = var.location
+  project_name = var.project_name
+}

@@ -1,9 +1,9 @@
 // Output the subnet IDs for the VMs
 
-output "public_subnet_id" {
-    value = azurerm_subnet.public.id
+output "frontend_subnet_id" {
+    value = azurerm_subnet.frontend.id
 }
 
-output "public_subnet_id" {
-    value = azurerm_subnet.private.id
+output "backend_subnet_id" {
+    value = azurerm_subnet.backend.id
 }

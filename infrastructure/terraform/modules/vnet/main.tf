@@ -9,15 +9,15 @@ resource "azurerm_virtual_network" "main" {
 
 // Public Subnet with NSG allowing SSH from everywhere
 
-resource "azurerm_subnet" "public" {
-  name                 = "${var.resource_group}-public-subnet"
+resource "azurerm_subnet" "frontend" {
+  name                 = "${var.resource_group}-frontend-subnet"
   resource_group_name  = var.resource_group
   virtual_network_name = azurerm_virtual_network.main.name
   address_prefixes     = ["10.0.1.0/16"]
 }
 
-resource "azurerm_network_security_group" "public" {
-  name                = "${var.project_name}-public-nsg"
+resource "azurerm_network_security_group" "frontend" {
+  name                = "${var.project_name}-frontend-nsg"
   location            = var.location
   resource_group_name = var.resource_group
 
@@ -36,15 +36,15 @@ resource "azurerm_network_security_group" "public" {
 
 // Private Subnet with NSG allowing SSH only from public subnet
 
-resource "azurerm_subnet" "private" {
-  name                 = "${var.resource_group}-private-subnet"
+resource "azurerm_subnet" "backend" {
+  name                 = "${var.resource_group}-backend-subnet"
   resource_group_name  = var.resource_group
   virtual_network_name = azurerm_virtual_network.main.name
   address_prefixes     = ["10.0.1.0/24"]
 }
 
-resource "azurerm_network_security_group" "private" {
-  name                = "${var.project_name}-private-nsg"
+resource "azurerm_network_security_group" "backend" {
+  name                = "${var.project_name}-backend-nsg"
   location            = var.location
   resource_group_name = var.resource_group
 
