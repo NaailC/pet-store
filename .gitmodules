@@ -1,0 +1,6 @@
+[submodule "frontend"]
+	path = frontend
+	url = https://github.com/spring-petclinic/spring-petclinic-angular.git
+[submodule "backend"]
+	path = backend
+	url = https://github.com/spring-petclinic/spring-petclinic-rest.git
