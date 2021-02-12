@@ -7,7 +7,7 @@ resource "azurerm_virtual_network" "main" {
   address_space       = ["10.0.0.0/16"]
 }
 
-// Public Subnet with NSG allowing SSH from everywhere
+// Frontend Subnet with NSG allowing SSH from everywhere
 
 resource "azurerm_subnet" "frontend" {
   name                 = "${var.resource_group}-frontend-subnet"
@@ -34,7 +34,7 @@ resource "azurerm_network_security_group" "frontend" {
   }
 }
 
-// Private Subnet with NSG allowing SSH only from public subnet
+// Backend Subnet with NSG allowing SSH only from public subnet
 
 resource "azurerm_subnet" "backend" {
   name                 = "${var.resource_group}-backend-subnet"
