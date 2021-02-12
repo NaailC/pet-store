@@ -1,13 +1,13 @@
-resource "azurerm_resource_group" "kubecluster-rg" {
+resource "azurerm_resource_group" "pet-store" {
   name     = var.name
   location = var.location
 }
 
 resource "azurerm_kubernetes_cluster" "kubecluster" {
   name                  = var.name
-  location              = azurerm_resource_group.kubecluster-rg.location
-  resource_group_name   = azurerm_resource_group.kubecluster-rg.name
-  dns_prefix            = "aks-getting-started"            
+  location              = azurerm_resource_group.pet-store.location
+  resource_group_name   = azurerm_resource_group.pet-store.name
+  dns_prefix            = "petclinic"            
   kubernetes_version    =  var.kubernetes_version
   
   default_node_pool {
