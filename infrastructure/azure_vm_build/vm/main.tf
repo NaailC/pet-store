@@ -1,25 +1,25 @@
-// Public VM
+// frontend VM
 
-resource "azurerm_public_ip" "public" {
-  name                = "${var.project_name}-publicip"
+resource "azurerm_frontend_ip" "frontend" {
+  name                = "${var.project_name}-frontendip"
   resource_group_name = azurerm_resource_group.main.name
   location            = var.location
   allocation_method   = "Dynamic"
 }
 
-resource "azurerm_linux_virtual_machine" "public" {
-  name                = "${var.project_name}-public-machine"
+resource "azurerm_linux_virtual_machine" "frontend" {
+  name                = "${var.project_name}-frontend-machine"
   resource_group_name = var.resource_group
   location            = var.location
   size                = var.vm_size
   admin_username      = "adminuser"
   network_interface_ids = [
-    azurerm_network_interface.public.id,
+    azurerm_network_interface.frontend.id,
   ]
 
   admin_ssh_key {
     username   = "adminuser"
-    public_key = file("~/.ssh/id_rsa.pub")
+    frontend_key = file("~/.ssh/id_rsa.pub")
   }
 
   os_disk {
@@ -35,28 +35,28 @@ resource "azurerm_linux_virtual_machine" "public" {
   }
 }
 
-// Private VM
+// backend VM
 
-resource "azurerm_private_ip" "private" {
-  name                = "${var.project_name}-privateip"
+resource "azurerm_backend_ip" "backend" {
+  name                = "${var.project_name}-backendip"
   resource_group_name = azurerm_resource_group.main.name
   location            = var.location
   allocation_method   = "Dynamic"
 }
 
-resource "azurerm_linux_virtual_machine" "private" {
-  name                = "${var.project_name}-private-machine"
+resource "azurerm_linux_virtual_machine" "backend" {
+  name                = "${var.project_name}-backend-machine"
   resource_group_name = var.resource_group
   location            = var.location
   size                = var.vm_size
   admin_username      = "adminuser"
   network_interface_ids = [
-    azurerm_network_interface.private.id,
+    azurerm_network_interface.backend.id,
   ]
 
   admin_ssh_key {
     username   = "adminuser"
-    public_key = file("~/.ssh/id_rsa.pub")
+    frontend_key = file("~/.ssh/id_rsa.pub")
   }
 
   os_disk {
