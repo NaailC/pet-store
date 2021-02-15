@@ -7,7 +7,7 @@ pipeline{
         stage("Dependencies"){
             steps{
                 script{
-                    sh "bash /scripts/install-dependencies.sh"
+                        sh "bash jenkins/install-dependencies.sh"
                 }
             }
         }
