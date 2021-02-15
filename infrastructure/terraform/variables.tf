@@ -1,17 +1,22 @@
 variable "serviceprinciple_id" {
+  default = 
 }
 
 variable "serviceprinciple_key" {
+  default = 
 }
 
 variable "tenant_id" {
+ default = 
 }
 
 variable "subscription_id" {
+  default = 
 }
 
 // SSH Key Variable
 variable "ssh_key" {
+  default = 
 }
 
 // Location
