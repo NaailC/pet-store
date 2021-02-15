@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Deployment
+metadata:
+  name: backend
+  labels:
+    app: pet-store
+spec:
+  containers:
+  - name: backend
+    image: mustaphaa/backend
+    ports:
+    -  containerPort: 5001

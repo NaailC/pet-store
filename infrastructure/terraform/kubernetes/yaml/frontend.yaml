@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Deployment
+metadata:
+  name: frontend
+  labels:
+    app: pet-store
+spec:
+  containers:
+  - name: frontend
+    image: mustaphaa/frontend
+    ports:
+    -  containerPort: 5000
