@@ -1,37 +1,15 @@
 pipeline{
     agent any
-    environment {
-        app_version = 'v1'
-        DATABASE_URI = credentials("DATABASE_URI")
+    environment{
+        rollback = 'false'
     }
     stages{
-        stage("Testing"){
+        stage("Dependencies"){
             steps{
-                sh "bash jenkins/test.sh"
-            }
-        }
-        stage("Build & Push"){
-            steps{
-                sh "docker-compose build --parallel && docker-compose push"
-                sh "docker system prune -af"
-            }
-        }
-        stage("Config Management"){
-            steps{
-                sh "cd ansible && /home/jenkins/.local/bin/ansible-playbook -i inventory playbook.yaml"
-            }
-        }
-        stage("Deploy"){
-            steps{
-                sh "bash jenkins/deploy.sh"
+                script{
+                        sh "bash jenkins/install-dependencies.sh"
+                }
             }
         }
     }
-    post{
-        always{
-            junit "**/junit.xml"
-            cobertura coberturaReportFile: '**/coverage.xml', failNoReports: false, failUnstable: false, onlyStable: false
-        }
-    }
-
 }
