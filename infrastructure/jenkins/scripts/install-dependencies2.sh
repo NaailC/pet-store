@@ -17,7 +17,7 @@ sudo groupadd docker
 sudo usermod -aG docker jenkins
 sudo su - jenkins
 newgrp docker
-sudo systemctl restart jenkins.service  #restarting jenkins service 
+#sudo systemctl restart jenkins.service  #restarting jenkins service 
 
 # Install Docker-Compose
 sudo apt update
