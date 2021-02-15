@@ -5,6 +5,13 @@ pipeline{
         DATABASE_URI = credentials("DATABASE_URI")
     }
     stages{
+        stage("Configuring Env"){
+            steps{
+                sh "bash jenkins/scripts/install-azure-kubectl.sh"
+                sh "bash jenkins/scripts/install-docker.sh"
+                sh "bash jenkins/scripts/install-terraform.sh"
+            }
+        }
         stage("Testing"){
             steps{
                 sh "bash jenkins/test.sh"
