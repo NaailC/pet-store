@@ -11,5 +11,19 @@ pipeline{
                 }
             }
         }
+        stage("Build Images"){
+            steps{
+                script{
+                        sh "bash infrastructure/jenkins/scripts/build.sh"
+                }
+            }
+        }
+        stage("Push Images"){
+            steps{
+                script{
+                        sh "bash infrastructure/jenkins/scripts/push.sh"
+                }
+            }
+        }
     }
 }
