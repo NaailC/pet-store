@@ -7,11 +7,11 @@ provider "kubernetes" {
 }
 
 
-resource "kubernetes_deployment" "example" {
+resource "kubernetes_deployment" "backend" {
   metadata {
-    name = "terraform-example"
+    name = "${var.project-name}"
     labels = {
-      test = "MyExampleApp"
+      test = "petstore"
     }
   }
 
@@ -20,14 +20,14 @@ resource "kubernetes_deployment" "example" {
 
     selector {
       match_labels = {
-        test = "MyExampleApp"
+        test = "petstore"
       }
     }
 
     template {
       metadata {
         labels = {
-          test = "MyExampleApp"
+          test = "petstore"
         }
       }
 
@@ -57,13 +57,13 @@ resource "kubernetes_deployment" "example" {
   }
 }
 
-resource "kubernetes_service" "example" {
+resource "kubernetes_service" "frontend" {
   metadata {
-    name = "terraform-example"
+    name = "${var.project-name}"
   }
   spec {
     selector = {
-      test = "MyExampleApp"
+      test = "petstore"
     }
     port {
       port        = 80
