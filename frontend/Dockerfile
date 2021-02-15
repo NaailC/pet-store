@@ -13,9 +13,9 @@ RUN echo "registry = \"$NPM_REGISTRY\"" > /workspace/.npmrc                     
     npm run build
 
 #ARG NGINX_VERSION="1.17.6"
-ARG NGINX_VERSION="latest"
-#FROM $DOCKER_HUB/library/nginx:$NGINX_VERSION AS runtime
-FROM nginx AS runtime
+#ARG NGINX_VERSION="latest"
+FROM $DOCKER_HUB/library/nginx:1.17.6 AS runtime
+#FROM nginx AS runtime
 
 
 
