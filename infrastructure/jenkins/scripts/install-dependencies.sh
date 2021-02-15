@@ -13,6 +13,7 @@ sudo mv ./kubectl /usr/local/bin/kubectl
 
 # Install Docker
 curl https://get.docker.com | sudo bash
+sudo groupadd docker
 sudo usermod -aG docker jenkins
 newgrp docker
 
