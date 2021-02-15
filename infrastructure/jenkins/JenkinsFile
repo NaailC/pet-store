@@ -2,11 +2,9 @@ pipeline{
     agent any
     environment {
     stages{
-        stage("Configuring Env"){
+        stage("Dependencies"){
             steps{
-                sh "bash jenkins/scripts/install-azure-kubectl.sh"
-                sh "bash jenkins/scripts/install-docker.sh"
-                sh "bash jenkins/scripts/install-terraform.sh"
+                sh "bash jenkins/scripts/install-dependencies.sh"
             }
         }
         stage("Testing"){
