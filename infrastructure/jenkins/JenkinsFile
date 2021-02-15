@@ -1,6 +1,7 @@
 pipeline{
     agent any
-    environment {
+    environment{
+    }
     stages{
         stage("Dependencies"){
             steps{
@@ -8,5 +9,4 @@ pipeline{
             }
         }
     }
-}
 }
