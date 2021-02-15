@@ -3,5 +3,5 @@ output "k8scluster" {
 }
 
 output "loadbalancer" {
-    value = frontend.k8s.kubernetes_service
+    value = kubernetes_nginx.k8s.kubernetes_nginx
 }

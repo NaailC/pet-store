@@ -57,7 +57,7 @@ resource "kubernetes_deployment" "backend" {
   }
 }
 
-resource "kubernetes_service" "frontend" {
+resource "kubernetes_nginx" "nginx" {
   metadata {
     name = "${var.project-name}"
   }
