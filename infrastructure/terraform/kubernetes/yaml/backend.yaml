@@ -20,3 +20,10 @@ spec:
             cpu: "500m"
         ports:
         - containerPort: 5001
+      volumeMounts:
+        - name: backend-config
+          mountPath: /etc/backend/conf.d
+      volumes:
+      - name: backend-config
+        configMap:
+          name: backend-config
