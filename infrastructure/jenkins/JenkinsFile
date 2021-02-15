@@ -8,14 +8,15 @@ pipeline{
         stage("Dependencies"){
             steps{
                 script{
-                        sh "bash infrastructure/jenkins/scripts/install-dependencies.sh"
+                        sh "bash infrastructure/jenkins/scripts/install-dependencies2.sh"
                 }
             }
         }
         stage("Build Images"){
             steps{
                 script{
-                        sh "docker login -u ${dockerhubcredentials_USR} -p ${dockerhubcredentials_PSW}"
+                    //    sh "docker login -u ${dockerhubcredentials_USR} -p ${dockerhubcredentials_PSW}"
+                     //   sh "docker login" 
                         sh "bash infrastructure/jenkins/scripts/build.sh"
                 }
             }
