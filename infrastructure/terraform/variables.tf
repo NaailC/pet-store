@@ -1,22 +1,22 @@
 variable "serviceprinciple_id" {
-  default = 
+  default = "${SERVICE_PRINCIPAL}"
 }
 
 variable "serviceprinciple_key" {
-  default = 
+  default = "${SERVICE_PRINCIPAL_SECRET}" 
 }
 
 variable "tenant_id" {
- default = 
+ default = "${TENTANT_ID}"
 }
 
 variable "subscription_id" {
-  default = 
+  default = "${SUBSCRIPTION}"
 }
 
 // SSH Key Variable
 variable "ssh_key" {
-  default = 
+  default = "${SSH_KEY}"
 }
 
 // Location
