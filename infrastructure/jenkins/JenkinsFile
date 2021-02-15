@@ -21,6 +21,7 @@ pipeline{
         stage("Push Images"){
             steps{
                 script{
+                        sh "docker login -u ${docker-credentials_USR} -p ${docker-credentials_PSW}"
                         sh "bash infrastructure/jenkins/scripts/push.sh"
                 }
             }
