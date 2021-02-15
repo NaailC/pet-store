@@ -4,13 +4,12 @@ provider "azurerm" {
   client_id       = var.serviceprinciple_id
   client_secret   = var.serviceprinciple_key
   tenant_id       = var.tenant_id
-
     features{}
-
 }
 
 module "cluster" {
       source                = "./modules/cluster/"
+  name                  = var.name
   serviceprinciple_id   = var.serviceprinciple_id
   serviceprinciple_key  = var.serviceprinciple_key
   ssh_key               = var.ssh_key
@@ -20,9 +19,15 @@ module "cluster" {
 
 module "k8s" {
     source = "./modules/k8s/"
-    host                  = "${module.cluster.host}"
+  host                  = "${module.cluster.host}"
   client_certificate    = "${base64decode(module.cluster.client_certificate)}"
   client_key            = "${base64decode(module.cluster.client_key)}"
-  cluster_ca_certificate= "${base64decode(module.cluster.cluster_ca_certificate)}"
-  
+  cluster_ca_certificate= "${base64decode(module.cluster.cluster_ca_certificate)}"  
+}
+
+module "virtual_network" {
+  source = "./modules/vnet"
+  resource_group = azurerm_resource_group.main.name
+  location = var.location
+  project_name = var.project_name
 }

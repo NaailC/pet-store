@@ -6,12 +6,20 @@ provider "kubernetes" {
     cluster_ca_certificate =  var.cluster_ca_certificate
 }
 
+resource "backendpod" "backend" {
+  
+}
 
-resource "kubernetes_deployment" "example" {
+resource "frontendpod" "frontend" {
+
+}
+
+
+resource "nginxpod" "nginx" {
   metadata {
-    name = "terraform-example"
+    name = "${var.project-name}"
     labels = {
-      test = "MyExampleApp"
+      test = "petstore"
     }
   }
 
@@ -20,14 +28,14 @@ resource "kubernetes_deployment" "example" {
 
     selector {
       match_labels = {
-        test = "MyExampleApp"
+        test = "petstore"
       }
     }
 
     template {
       metadata {
         labels = {
-          test = "MyExampleApp"
+          test = "petstore"
         }
       }
 
@@ -57,13 +65,13 @@ resource "kubernetes_deployment" "example" {
   }
 }
 
-resource "kubernetes_service" "example" {
+resource "nginxlb" "nginx" {
   metadata {
-    name = "terraform-example"
+    name = "${var.project-name}"
   }
   spec {
     selector = {
-      test = "MyExampleApp"
+      test = "petstore"
     }
     port {
       port        = 80

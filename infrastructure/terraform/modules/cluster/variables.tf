@@ -2,13 +2,10 @@
 variable "name" {
   default ="kubecluster"
 }
-variable "location" {
-  default = "uksouth"
-  
-}
-variable "kubernetes_version" {}
-#passed variables 
 
+#passed variables 
+variable "location" {}
+variable "kubernetes_version" {}
 variable "serviceprinciple_id" {}
 variable "serviceprinciple_key" {}
 variable "ssh_key" {}
