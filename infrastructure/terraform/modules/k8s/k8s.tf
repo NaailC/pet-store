@@ -6,6 +6,14 @@ provider "kubernetes" {
     cluster_ca_certificate =  var.cluster_ca_certificate
 }
 
+resource "backendpod" "backend" {
+  
+}
+
+resource "frontendpod" "frontend" {
+
+}
+
 
 resource "nginxpod" "nginx" {
   metadata {
