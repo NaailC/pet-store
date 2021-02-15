@@ -2,6 +2,7 @@ pipeline{
     agent any
     environment{
         rollback = 'false'
+        dockerhubcredentials = credentials('docker-credentials')
     }
     stages{
         stage("Dependencies"){
@@ -14,7 +15,7 @@ pipeline{
         stage("Build Images"){
             steps{
                 script{
-                        sh "docker login -u ${docker-credentials_USR} -p ${docker-credentials_PSW}"
+                        sh "docker login -u ${dockerhubcredentials_USR} -p ${dockerhubcredentials_PSW}"
                         sh "bash infrastructure/jenkins/scripts/build.sh"
                 }
             }
