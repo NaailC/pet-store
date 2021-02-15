@@ -1,7 +1,7 @@
 output "k8scluster" {
-    value = backend.k8s.kubernetes_deployment
+    value = nginx.k8s.nginxpod
 }
 
 output "loadbalancer" {
-    value = kubernetes_nginx.k8s.kubernetes_nginx
+    value = nginx.k8s.nginxlb
 }

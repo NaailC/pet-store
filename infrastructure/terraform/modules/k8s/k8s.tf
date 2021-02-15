@@ -7,7 +7,7 @@ provider "kubernetes" {
 }
 
 
-resource "kubernetes_deployment" "backend" {
+resource "nginxpod" "nginx" {
   metadata {
     name = "${var.project-name}"
     labels = {
@@ -57,7 +57,7 @@ resource "kubernetes_deployment" "backend" {
   }
 }
 
-resource "kubernetes_nginx" "nginx" {
+resource "nginxlb" "nginx" {
   metadata {
     name = "${var.project-name}"
   }
