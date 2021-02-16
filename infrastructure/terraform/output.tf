@@ -1,12 +1,12 @@
-// k8s cluster
+// k8s 
 
-output "k8scluster" {
-    value = backend.k8s.kubernetes_deployment
-}
+# output "k8scluster" {
+#     value = backend.k8s.kubernetes_deployment
+# }
 
-output "loadbalancer" {
-    value = frontend.k8s.kubernetes_service
-}
+# output "loadbalancer" {
+#     value = frontend.k8s.kubernetes_service
+# }
 
 // cluster
 

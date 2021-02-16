@@ -1,22 +1,22 @@
 variable "serviceprinciple_id" {
-  default = "${SERVICE_PRINCIPAL}"
+  default = "SERVICE_PRINCIPAL"
 }
 
 variable "serviceprinciple_key" {
-  default = "${SERVICE_PRINCIPAL_SECRET}" 
+  default = "SERVICE_PRINCIPAL_SECRET" 
 }
 
 variable "tenant_id" {
- default = "${TENTANT_ID}"
+ default = "TENTANT_ID"
 }
 
 variable "subscription_id" {
-  default = "${SUBSCRIPTION}"
+  default = "SUBSCRIPTION"
 }
 
 // SSH Key Variable
 variable "ssh_key" {
-  default = "${SSH_KEY}"
+  default = "SSH_KEY"
 }
 
 // Location
@@ -32,4 +32,16 @@ variable "kubernetes_version" {
 // VM Size
 variable "vm_size" {
     default = "Standard_E2s"
+}
+
+variable "clustername" {
+  default ="kubecluster"
+}
+
+variable "project_name" {
+  default ="pet-store"
+}
+
+variable "resource_group" {
+  default ="pet-store"
 }
