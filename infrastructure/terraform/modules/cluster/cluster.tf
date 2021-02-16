@@ -1,10 +1,10 @@
 resource "azurerm_resource_group" "pet-store" {
-  name     = var.name
+  name     = "${var.name}-rg"
   location = var.location
 }
 
 resource "azurerm_kubernetes_cluster" "kubecluster" {
-  name                  = var.name
+  name                  = "${var.name}-cluster"
   location              = azurerm_resource_group.pet-store.location
   resource_group_name   = azurerm_resource_group.pet-store.name
   dns_prefix            = "petclinic"            

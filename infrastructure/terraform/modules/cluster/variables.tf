@@ -1,10 +1,13 @@
 #local variables 
 variable "name" {
-  default ="kubecluster"
+  default = "petstore"
+}
+
+variable "location" {
+  default = "uksouth"
 }
 
 #passed variables 
-variable "location" {}
 variable "kubernetes_version" {}
 variable "serviceprinciple_id" {}
 variable "serviceprinciple_key" {}
