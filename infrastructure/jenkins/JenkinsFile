@@ -27,5 +27,13 @@ pipeline{
                 }
             }
         }
+
+        stage("test application"){
+            steps{
+                script{
+                    sh "bash docker-compose up"
+                }
+            }
+        }
     }
 }
