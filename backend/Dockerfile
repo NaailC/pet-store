@@ -9,3 +9,4 @@ WORKDIR /opt/spring-petclinic-rest
  
 COPY --from=build-stage /build/target/*.jar app.jar
 ENTRYPOINT ["/usr/bin/java", "-jar", "app.jar"]
+EXPOSE 9966 
