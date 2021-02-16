@@ -4,8 +4,8 @@ services:
     image: nginx:latest
     container_name: nginx 
     ports:
-    - target: 80
-      published: 80
+    - target: 81
+      published: 81
       protocol: tcp
     volumes:
     - type: bind
