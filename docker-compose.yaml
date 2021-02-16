@@ -1,5 +1,13 @@
 version: "3.7"
 services:
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    volumes:
+     - ./infrastructure/nginx/nginx.conf
+    ports:
+      - 80:80
+      protocol: tcp
   frontend:
     container_name: frontend
     image: mustaphaa/frontend
