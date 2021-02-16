@@ -7,10 +7,6 @@ services:
     - type: bind
       source: ./infrastructure/nginx/nginx.conf
       target: /etc/nginx/nginx.conf
-    ports:
-    - target: 5001
-      published: 5001
-      protocol: tcp
   frontend:
     container_name: frontend
     image: mustaphaa/frontend
