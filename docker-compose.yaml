@@ -2,7 +2,11 @@ version: "3.7"
 services:
   nginx:
     image: nginx:latest
-    container_name: nginx
+    container_name: nginx 
+    ports:
+    - target: 80
+      published: 80
+      protocol: tcp
     volumes:
     - type: bind
       source: ./infrastructure/nginx/nginx.conf
@@ -11,10 +15,7 @@ services:
     container_name: frontend
     image: mustaphaa/frontend
     build: ./frontend
-    ports:
-    - target: 8080
-      published: 5000
-      protocol: tcp
+  
   backend:
     container_name: backend
     image: mustaphaa/backend
