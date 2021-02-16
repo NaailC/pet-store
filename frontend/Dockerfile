@@ -19,7 +19,7 @@ FROM $DOCKER_HUB/library/nginx:1.17.6 AS runtime
 
 
 
-COPY  --from=build /workspace/dist/ /usr/share/nginx/html/
+COPY  --from=build /workspace/dist/ /usr/share/nginx/html/petclinc
 
 RUN chmod a+rwx /var/cache/nginx /var/run /var/log/nginx                        && \
     sed -i.bak 's/listen\(.*\)80;/listen 8080;/' /etc/nginx/conf.d/default.conf && \
