@@ -4,10 +4,10 @@ services:
     image: nginx:latest
     container_name: nginx
     volumes:
-     - ./infrastructure/nginx/nginx.conf
+    - ./infrastructure/nginx/nginx.conf
     ports:
-    - target: 80
-      published: 80
+    - target: 5001
+      published: 5001
       protocol: tcp
   frontend:
     container_name: frontend
