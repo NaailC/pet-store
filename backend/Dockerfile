@@ -3,7 +3,6 @@ COPY . /build
 WORKDIR /build
 RUN mvn clean package -DskipTests 
 
-
 FROM openjdk:8-jre-alpine AS runtime 
 WORKDIR /opt/spring-petclinic-rest
  
