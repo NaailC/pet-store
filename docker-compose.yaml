@@ -4,7 +4,8 @@ services:
     image: nginx:latest
     container_name: nginx
     volumes:
-    - ./infrastructure/nginx/nginx.conf
+    - type: bind
+      source: ./infrastructure/nginx/nginx.conf
     ports:
     - target: 5001
       published: 5001
