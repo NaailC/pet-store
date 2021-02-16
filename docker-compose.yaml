@@ -6,6 +6,7 @@ services:
     volumes:
     - type: bind
       source: ./infrastructure/nginx/nginx.conf
+      target: /etc/nginx/nginx.conf
     ports:
     - target: 5001
       published: 5001
