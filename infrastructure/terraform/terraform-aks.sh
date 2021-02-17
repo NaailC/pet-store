@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Run Azure CLI
-sudo snap install docker
-sudo docker run -it --rm -v ${PWD}:/work -w /work --entrypoint /bin/sh mcr.microsoft.com/azure-cli:2.6.0
+# sudo snap install docker
+# sudo docker run -it --rm -v ${PWD}:/work -w /work --entrypoint /bin/sh mcr.microsoft.com/azure-cli:2.6.0
 
-#login and follow prompts
-az login
+# #login and follow prompts
+# az login
 sudo apt  install jq
 export TENANT_ID="$(az account show | jq -r '.tenantId')"
 
@@ -29,13 +29,13 @@ az role assignment create --assignee $SERVICE_PRINCIPAL \
 --role Contributor
 
 #terraform CLI - perhaps remove but it makes more sense to remove from jenkins script and add it to this script. But also may not matter whatsoever
-sudo apt install -y unzip wget
-wget https://releases.hashicorp.com/terraform/0.14.6/terraform_0.14.6_linux_amd64.zip
-unzip terraform_*_linux_*.zip
-sudo mv terraform /usr/local/bin/
-rm terraform_*_linux_*.zip
+# sudo apt install -y unzip wget
+# wget https://releases.hashicorp.com/terraform/0.14.6/terraform_0.14.6_linux_amd64.zip
+# unzip terraform_*_linux_*.zip
+# sudo mv terraform /usr/local/bin/
+# rm terraform_*_linux_*.zip
 
-cd /pet-store/infrastructure/terraform
+# cd /pet-store/infrastructure/terraform
 
 #generate SSH key
 ssh-keygen -t rsa -b 4096 -N "" -q -f ~/.ssh/id_rsa
@@ -50,7 +50,7 @@ terraform plan -var serviceprinciple_id=$SERVICE_PRINCIPAL \
     -var subscription_id=$SUBSCRIPTION \
     -var ssh_key="$SSH_KEY"
 
-terraform apply -var serviceprinciple_id=$SERVICE_PRINCIPAL \
+terraform apply --auto-approve -var serviceprinciple_id=$SERVICE_PRINCIPAL \
     -var serviceprinciple_key="$SERVICE_PRINCIPAL_SECRET" \
     -var tenant_id=$TENANT_ID \
     -var subscription_id=$SUBSCRIPTION \
