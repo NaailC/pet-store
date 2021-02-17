@@ -3,7 +3,7 @@ resource "azurerm_kubernetes_cluster" "kubecluster" {
   location              = var.location
   resource_group_name   = var.resource_group 
   dns_prefix            = "petclinic"            
-  kubernetes_version    =  var.kubernetes_version
+  kubernetes_version    = var.kubernetes_version
   
   default_node_pool {
     name       = "default"

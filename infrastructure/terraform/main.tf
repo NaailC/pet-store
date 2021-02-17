@@ -1,10 +1,15 @@
 provider "azurerm" {
-    version = "2.5.0"
+  version = "2.5.0"
   subscription_id = var.subscription_id
   client_id       = var.serviceprinciple_id
   client_secret   = var.serviceprinciple_key
   tenant_id       = var.tenant_id
     features{}
+}
+
+resource "azurerm_resource_group" "main" {
+  name     = var.resource_group
+  location = var.location
 }
 
 module "cluster" {
@@ -28,7 +33,7 @@ module "cluster" {
 
 module "virtual_network" {
   source = "./modules/vnet"
-  resource_group = var.name
+  resource_group = var.resource_group
   location = var.location
   project_name = var.project_name
 }

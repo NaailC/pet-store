@@ -6,9 +6,7 @@ variable "serviceprinciple_key" {
   default = "SERVICE_PRINCIPAL_SECRET" 
 }
 
-variable "tenant_id" {
- default = "TENTANT_ID"
-}
+variable "tenant_id" {}
 
 variable "subscription_id" {
   default = "SUBSCRIPTION"
@@ -35,7 +33,7 @@ variable "vm_size" {
 }
 
 variable "clustername" {
-  default ="kubecluster"
+  default ="petstorecluster"
 }
 
 variable "project_name" {

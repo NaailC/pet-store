@@ -16,8 +16,8 @@ export SUBSCRIPTION=ad2c6380-a5fc-488d-821a-d8f762d65c3b
 az account set --subscription $SUBSCRIPTION
 
 #install aks cluster
-az aks create --resource-group petstore --location ukwest --name petstoreCluster --node-count 3 --enable-addons monitoring --generate-ssh-keys
-az aks get-credentials --resource-group petsore --name petstoreCluster 
+az aks create --resource-group petstore --location ukwest --name petstorecluster --node-count 3 --enable-addons monitoring --generate-ssh-keys
+az aks get-credentials --resource-group petsore --name petstorecluster 
 
 #creating service principal
 SERVICE_PRINCIPAL_JSON=$(az ad sp create-for-rbac --skip-assignment --name petstore_service_principal -o json)
@@ -27,10 +27,10 @@ SERVICE_PRINCIPAL_JSON=$(az ad sp create-for-rbac --skip-assignment --name petst
 terraform init
 
 terraform plan -var serviceprinciple_id=$SERVICE_PRINCIPAL \
-    -var serviceprinciple_key="$SERVICE_PRINCIPAL_SECRET" \
+    -var serviceprinciple_key=$SERVICE_PRINCIPAL_SECRET \
     -var tenant_id=$TENTANT_ID \
     -var subscription_id=$SUBSCRIPTION \
-    -var ssh_key="$SSH_KEY"
+    -var ssh_key=$SSH_KEY
 
 terraform apply -var serviceprinciple_id=$SERVICE_PRINCIPAL \
     -var serviceprinciple_key="$SERVICE_PRINCIPAL_SECRET" \

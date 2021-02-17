@@ -1,5 +1,4 @@
 variable "clustername" {}
-#passed variables 
 variable "location" {}
 variable "kubernetes_version" {}
 variable "serviceprinciple_id" {}
