@@ -67,7 +67,7 @@ echo $(ls -a)
 cd .jenkins/workspace/pet-store-test/infrastructure/terraform/kubernetes/yaml
 
 
-az aks get-credentials --resource-group pet-store --name pet-store-kluster
+az aks get-credentials --resource-group pet-clinic --name pet-clinic-kluster
 kubectl create -f nginx.yaml
 kubectl create -f frontend.yaml
 kubectl create -f backend.yaml
