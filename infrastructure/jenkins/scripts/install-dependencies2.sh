@@ -4,8 +4,7 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install -y wget unzip curl
 
 # Install Azure CLI
-# curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
-# az login
+curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 
 # Install kubectl
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
