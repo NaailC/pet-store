@@ -1,2 +1,0 @@
-this is the dir for the kubernetes config file
-somethin

@@ -60,6 +60,22 @@ terraform plan -out plan.out -var serviceprinciple_id=${serviceprincipalclientid
     -var ssh_key="$SSH_KEY"
 
 terraform apply plan.out
+
+cd ${workspace}
+echo $(pwd)
+echo $(ls -a)
+cd .jenkins/workspace/pet-store-test/infrastructure/terraform/kubernetes/yaml
+
+
+az aks get-credentials --resource-group pet-store --name pet-store-kluster
+kubectl create -f nginx.yaml
+kubectl create -f frontend.yaml
+kubectl create -f backend.yaml
+
+
+
+
+
 # --auto-approve
 
 #  -var serviceprinciple_id=${serviceprincipalclientid} \
