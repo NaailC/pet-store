@@ -48,7 +48,7 @@ SSH_KEY=$(cat ~/.ssh/id_rsa.pub)
 cd ${workspace}
 echo $(pwd)
 echo $(ls -a)
-cd pet-store/infrastructure/terraform
+cd .jenkins/workspace/pet-store-test/infrastructure/terraform 
 
 #terraform
 terraform init
