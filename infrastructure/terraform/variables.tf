@@ -11,11 +11,11 @@ variable "subscription_id" {
 }
 
 variable "name" {
-  default = "pet-store"
+  default = "pet-clinic"
 }
 
 variable "project_name" {
-  default = "pet-store"
+  default = "pet-clinic"
 }
 
 // SSH Key Variable - may need to not write this as an env var

@@ -34,9 +34,9 @@ spec:
             cpu: "500m"
         ports:
         - containerPort: 5000
-      volumeMounts:
-        - name: frontend-config
-          mountPath: /etc/frontend/conf.d
+        volumeMounts:
+          - name: frontend-config
+            mountPath: /etc/frontend/conf.d
       volumes:
       - name: frontend-config
         configMap:
