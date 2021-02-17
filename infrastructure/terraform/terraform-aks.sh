@@ -53,14 +53,14 @@ cd .jenkins/workspace/pet-store-test/infrastructure/terraform
 #terraform
 terraform init
 
-terraform plan -var serviceprinciple_id=${serviceprincipalclientid} \
-    -var serviceprinciple_key=${serviceprincipalpassword} \
-    -var tenant_id=${serviceprincipaltenant} \
-    -var subscription_id=${serviceprincipalsubscription} \
+terraform plan -var serviceprinciple_id="${serviceprincipalclientid}" \
+    -var serviceprinciple_key="${serviceprincipalpassword}" \
+    -var tenant_id="${serviceprincipaltenant}" \
+    -var subscription_id="${serviceprincipalsubscription}" \
     -var ssh_key="$SSH_KEY"
 
-terraform apply --auto-approve -var serviceprinciple_id=${serviceprincipalclientid} \
-    -var serviceprinciple_key=${serviceprincipalpassword} \
-    -var tenant_id=${serviceprincipaltenant} \
-    -var subscription_id=${serviceprincipalsubscription} \
-    -var ssh_key="$SSH_KEY"
+# terraform apply --auto-approve -var serviceprinciple_id=${serviceprincipalclientid} \
+#     -var serviceprinciple_key=${serviceprincipalpassword} \
+#     -var tenant_id=${serviceprincipaltenant} \
+#     -var subscription_id=${serviceprincipalsubscription} \
+#     -var ssh_key="$SSH_KEY"
