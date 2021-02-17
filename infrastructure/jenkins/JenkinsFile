@@ -10,7 +10,7 @@ pipeline{
         serviceprincipalclientid = credentials('client-id')
         serviceprincipalsubscription = credentials('subscription-id')
     }
-    // stages{
+     stages{
     //     stage("Dependencies"){
     //         steps{
     //             script{
