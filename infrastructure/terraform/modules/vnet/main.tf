@@ -4,7 +4,7 @@ resource "azurerm_virtual_network" "main" {
   name                = "${var.project_name}-vnet"
   location            = var.location
   resource_group_name = var.resource_group
-  address_space       = ["10.0.0.0/16"]
+  address_space       = ["10.0.0.0/8"]
 }
 
 // Frontend Subnet with NSG allowing SSH from everywhere
@@ -13,7 +13,7 @@ resource "azurerm_subnet" "frontend" {
   name                 = "${var.resource_group}-frontend-subnet"
   resource_group_name  = var.resource_group
   virtual_network_name = azurerm_virtual_network.main.name
-  address_prefixes     = ["10.0.1.0/16"]
+  address_prefix       = "10.0.1.0/16."
 }
 
 resource "azurerm_network_security_group" "frontend" {
@@ -40,7 +40,7 @@ resource "azurerm_subnet" "backend" {
   name                 = "${var.resource_group}-backend-subnet"
   resource_group_name  = var.resource_group
   virtual_network_name = azurerm_virtual_network.main.name
-  address_prefixes     = ["10.0.1.0/24"]
+  address_prefix       = "10.0.2.0/16."
 }
 
 resource "azurerm_network_security_group" "backend" {
@@ -56,7 +56,7 @@ resource "azurerm_network_security_group" "backend" {
     protocol                   = "Tcp"
     source_port_range          = "*"
     destination_port_range     = "22"
-    source_address_prefix      = "10.0.1.0/24"
+    source_address_prefix      = "10.0.2.0/16."
     destination_address_prefix = "*"
   }
 }
