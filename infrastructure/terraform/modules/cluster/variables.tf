@@ -1,11 +1,7 @@
 #local variables 
-variable "name" {
-  default = "petstore"
-}
+variable "name" {}
 
-variable "location" {
-  default = "uksouth"
-}
+variable "location" {}
 
 #passed variables 
 variable "kubernetes_version" {}

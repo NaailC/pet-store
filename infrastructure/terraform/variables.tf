@@ -11,11 +11,11 @@ variable "subscription_id" {
 }
 
 variable "name" {
-  default = "petstore"
+  default = "pet-store"
 }
 
 variable "project_name" {
-  default = "petstore"
+  default = "pet-store"
 }
 
 // SSH Key Variable - may need to not write this as an env var
@@ -24,7 +24,7 @@ variable "ssh_key" {
 
 // Location
 variable "location" {
-  default = "UKsouth"
+  default = "ukwest"
 }
 
 // Kubernetes
