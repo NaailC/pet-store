@@ -48,7 +48,7 @@ ssh-keygen -t rsa -b 4096 -N "" -q -f ~/.ssh/id_rsa -y
 SSH_KEY=$(cat ~/.ssh/id_rsa.pub)
 
 
-echo ${pwd}
+echo $(pwd)
 #terraform
 terraform init
 
