@@ -10,7 +10,6 @@ pipeline{
             steps{
                 script{
                         sh "bash infrastructure/jenkins/scripts/install-dependencies2.sh"
-                        sh "az login -u ${azurecredentials_USR} -p ${azurecredentials_PSW}"
                 }
             }
         }
