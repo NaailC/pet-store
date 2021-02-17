@@ -18,6 +18,10 @@ variable "project_name" {
   default = "pet-clinic"
 }
 
+variable "resource_group" {
+  default = "pet-clinic"
+}
+
 // SSH Key Variable - may need to not write this as an env var
 variable "ssh_key" {
 }

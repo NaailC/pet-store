@@ -6,7 +6,7 @@ resource "azurerm_resource_group" "pet-store" {
 resource "azurerm_kubernetes_cluster" "kubecluster" {
   name                  = "${var.name}-cluster"
   location              = azurerm_resource_group.pet-store.location
-  resource_group_name   = azurerm_resource_group.pet-store.name
+  resource_group_name   = var.resource_group
   dns_prefix            = "petclinic"            
   kubernetes_version    =  var.kubernetes_version
   
