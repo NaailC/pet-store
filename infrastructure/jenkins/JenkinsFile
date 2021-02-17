@@ -3,6 +3,7 @@ pipeline{
     environment{
         rollback = 'false'
         dockerhubcredentials = credentials('docker-credentials')
+        azure-credentials = credentials('azure-credentials')
         serviceprincipalurl = credentials('sp-URL')
         serviceprincipalpassword = credentials('sp-Password')
         serviceprincipaltenant = credentials('sp-Tenant')
@@ -13,7 +14,6 @@ pipeline{
             steps{
                 script{
                         sh "bash infrastructure/jenkins/scripts/install-dependencies2.sh"
-                        sh "az login --service-principal -u ${serviceprincipalurl} -p ${serviceprincipalpassword} --tenant ${serviceprincipaltenant}"
                 }
             }
         }
@@ -36,6 +36,7 @@ pipeline{
         stage("Terraform Deploy"){
             steps{
                 script{
+                    sh "az login --service-principal -u ${serviceprincipalurl} -p ${serviceprincipalpassword} --tenant ${AZURE_TENANT_ID}"
                     sh "bash infrastructure/terraform/terraform-aks.sh"                    
                 }
             }
