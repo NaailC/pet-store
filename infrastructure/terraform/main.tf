@@ -27,7 +27,7 @@ module "cluster" {
 
 module "virtual_network" {
   source = "./modules/vnet"
-  resource_group = azurerm_resource_group.main.name
+  resource_group = var.name
   location = var.location
   project_name = var.project_name
 }
