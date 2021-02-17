@@ -5,6 +5,7 @@ sudo apt install -y wget unzip curl
 
 # Install Azure CLI
 curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+az login --service-principal -u http://PetStoreSP -p FNaH_vCYu2lzwyw.ItyGyzQRC_CkQZB137 --tenant c682b43d-e2f2-4c3f-b0fd-8fa52d5001ed
 
 # Install kubectl
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
