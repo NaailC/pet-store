@@ -36,7 +36,11 @@ pipeline{
         stage("Terraform Deploy"){
             steps{
                 script{
-                    withCredentials([azureServicePrincipal('azure-credentials')]) {
+                    withCredentials([azureServicePrincipal(credentialsId: 'azure-credentials',
+                                    subscriptionIdVariable: 'AZURE_SUBSCRIPTION_ID',
+                                    clientIdVariable: 'AZURE_CLIENT_ID',
+                                    clientSecretVariable: 'AZURE_CLIENT_SECRET',
+                                    tenantIdVariable: 'AZURE_TENANT_ID')]) {
                     sh 'az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID'}
                     sh "bash infrastructure/terraform/terraform-aks.sh"                    
                 }
