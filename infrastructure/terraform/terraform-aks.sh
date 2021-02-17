@@ -17,7 +17,7 @@ az account set --subscription $AZURE_SUBSCRIPTION_ID
 
 
 #creating service principal
-SERVICE_PRINCIPAL_JSON="$(az ad sp create-for-rbac --skip-assignment --name petstore_service_principal -o json)"
+#SERVICE_PRINCIPAL_JSON="$(az ad sp create-for-rbac --skip-assignment --name petstore_service_principal -o json)"
 
 # Keep the `appId` and `password` for later use!
 #export SERVICE_PRINCIPAL="$(echo $SERVICE_PRINCIPAL_JSON | jq -r '.appId')"
