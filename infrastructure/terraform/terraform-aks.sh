@@ -38,7 +38,7 @@ az role assignment create --assignee ${serviceprincipalclientid} \
 # sudo mv terraform /usr/local/bin/
 # rm terraform_*_linux_*.zip
 echo "CDing into terraform folder"
-cd 
+cd ~
 cd /pet-store/infrastructure/terraform
 
 #generate SSH key
