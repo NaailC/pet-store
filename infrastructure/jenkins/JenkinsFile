@@ -13,8 +13,7 @@ pipeline{
             steps{
                 script{
                         sh "bash infrastructure/jenkins/scripts/install-dependencies2.sh"
-                        sh "az login --service-principal -u sp-URL -p sp-Password --tenant sp-Tenant
-"
+                        sh "az login --service-principal -u sp-URL -p sp-Password --tenant sp-Tenant"
                 }
             }
         }
