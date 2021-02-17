@@ -13,7 +13,7 @@ sudo apt  install jq
 
 az account list -o table
 #export SUBSCRIPTION="$(az account show -o json | jq -r '.id')"
-az account set --subscription $SUBSCRIPTION
+az account set --subscription $serviceprincipalsubscription
 
 
 #creating service principal
@@ -24,8 +24,8 @@ az account set --subscription $SUBSCRIPTION
 #export SERVICE_PRINCIPAL_SECRET="$(echo $SERVICE_PRINCIPAL_JSON | jq -r '.password')"
 
 # Grant contributor role over the subscription to our service principal
-az role assignment create --assignee $SERVICE_PRINCIPAL \
---scope "/subscriptions/$SUBSCRIPTION" \
+az role assignment create --assignee $serviceprincipalclientid \
+--scope "/subscriptions/$serviceprincipalsubscription" \
 --role Contributor
 
 #terraform CLI - perhaps remove but it makes more sense to remove from jenkins script and add it to this script. But also may not matter whatsoever
@@ -44,14 +44,14 @@ SSH_KEY=$(cat ~/.ssh/id_rsa.pub)
 #terraform
 terraform init
 
-terraform plan -var serviceprinciple_id=$SERVICE_PRINCIPAL \
-    -var serviceprinciple_key="$SERVICE_PRINCIPAL_SECRET" \
+terraform plan -var serviceprinciple_id=$serviceprincipalclientid \
+    -var serviceprinciple_key="$serviceprincipalpassword" \
     -var tenant_id=$serviceprincipaltenant \
-    -var subscription_id=$SUBSCRIPTION \
+    -var subscription_id=$serviceprincipalsubscription \
     -var ssh_key="$SSH_KEY"
 
-terraform apply --auto-approve -var serviceprinciple_id=$SERVICE_PRINCIPAL \
-    -var serviceprinciple_key="$SERVICE_PRINCIPAL_SECRET" \
+terraform apply --auto-approve -var serviceprinciple_id=$serviceprincipalclientid \
+    -var serviceprinciple_key="$serviceprincipalpassword" \
     -var tenant_id=$serviceprincipaltenant \
-    -var subscription_id=$SUBSCRIPTION \
+    -var subscription_id=$serviceprincipalsubscription \
     -var ssh_key="$SSH_KEY"
