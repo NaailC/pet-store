@@ -59,7 +59,7 @@ terraform plan -out plan.out -var serviceprinciple_id=${serviceprincipalclientid
     -var subscription_id=${serviceprincipalsubscription} \
     -var ssh_key="$SSH_KEY"
 
-terraform apply "plan.out" --auto-approve
+terraform apply plan.out --auto-approve
 
 #  -var serviceprinciple_id=${serviceprincipalclientid} \
 #     -var serviceprinciple_key="${serviceprincipalpassword}" \
