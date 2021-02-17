@@ -37,7 +37,7 @@ pipeline{
         stage("Terraform Deploy"){
             steps{
                 script{
-                    sh "az login --service-principal -u ${serviceprincipalurl} -p ${serviceprincipalpassword} --tenant ${serviceprincipaltenant}"
+                    sh "az login --service-principal -u ${serviceprincipalclientid} -p ${serviceprincipalpassword} --tenant ${serviceprincipaltenant}"
                     sh "bash infrastructure/terraform/terraform-aks.sh"                    
                 }
             }
