@@ -10,29 +10,29 @@ pipeline{
         serviceprincipalclientid = credentials('client-id')
         serviceprincipalsubscription = credentials('subscription-id')
     }
-    stages{
-        stage("Dependencies"){
-            steps{
-                script{
-                        sh "bash infrastructure/jenkins/scripts/install-dependencies2.sh"
-                }
-            }
-        }
-        stage("Build Images"){
-            steps{
-                script{
-                        sh "docker login -u ${dockerhubcredentials_USR} -p ${dockerhubcredentials_PSW}"
-                        sh "bash infrastructure/jenkins/scripts/build.sh"
-                }
-            }
-        }
-        stage("Push Images"){
-            steps{
-                script{
-                        sh "bash infrastructure/jenkins/scripts/push.sh"
-                }
-            }
-        }
+    // stages{
+    //     stage("Dependencies"){
+    //         steps{
+    //             script{
+    //                     sh "bash infrastructure/jenkins/scripts/install-dependencies2.sh"
+    //             }
+    //         }
+    //     }
+    //     stage("Build Images"){
+    //         steps{
+    //             script{
+    //                     sh "docker login -u ${dockerhubcredentials_USR} -p ${dockerhubcredentials_PSW}"
+    //                     sh "bash infrastructure/jenkins/scripts/build.sh"
+    //             }
+    //         }
+    //     }
+    //     stage("Push Images"){
+    //         steps{
+    //             script{
+    //                     sh "bash infrastructure/jenkins/scripts/push.sh"
+    //             }
+    //         }
+    //     }
 
         stage("Terraform Deploy"){
             steps{
