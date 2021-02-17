@@ -7,21 +7,21 @@ az aks get-credentials --resource-group pet-clinic --name pet-clinic-cluster
 # #login and follow prompts
 # az login
 sudo apt  install jq
-export TENANT_ID="$(az account show | jq -r '.tenantId')"
+#export TENANT_ID="$(az account show | jq -r '.tenantId')"
 
 # view and select your subscription account
 
 az account list -o table
-export SUBSCRIPTION="$(az account show -o json | jq -r '.id')"
+#export SUBSCRIPTION="$(az account show -o json | jq -r '.id')"
 az account set --subscription $SUBSCRIPTION
 
 
 #creating service principal
-SERVICE_PRINCIPAL_JSON="$(az ad sp create-for-rbac --skip-assignment --name petstore_service_principal -o json)"
+#SERVICE_PRINCIPAL_JSON="$(az ad sp create-for-rbac --skip-assignment --name petstore_service_principal -o json)"
 
 # Keep the `appId` and `password` for later use!
-export SERVICE_PRINCIPAL="$(echo $SERVICE_PRINCIPAL_JSON | jq -r '.appId')"
-export SERVICE_PRINCIPAL_SECRET="$(echo $SERVICE_PRINCIPAL_JSON | jq -r '.password')"
+#export SERVICE_PRINCIPAL="$(echo $SERVICE_PRINCIPAL_JSON | jq -r '.appId')"
+#export SERVICE_PRINCIPAL_SECRET="$(echo $SERVICE_PRINCIPAL_JSON | jq -r '.password')"
 
 # Grant contributor role over the subscription to our service principal
 az role assignment create --assignee $SERVICE_PRINCIPAL \
@@ -46,12 +46,12 @@ terraform init
 
 terraform plan -var serviceprinciple_id=$SERVICE_PRINCIPAL \
     -var serviceprinciple_key="$SERVICE_PRINCIPAL_SECRET" \
-    -var tenant_id=$TENANT_ID \
+    -var tenant_id=$serviceprincipaltenant \
     -var subscription_id=$SUBSCRIPTION \
     -var ssh_key="$SSH_KEY"
 
 terraform apply --auto-approve -var serviceprinciple_id=$SERVICE_PRINCIPAL \
     -var serviceprinciple_key="$SERVICE_PRINCIPAL_SECRET" \
-    -var tenant_id=$TENANT_ID \
+    -var tenant_id=$serviceprincipaltenant \
     -var subscription_id=$SUBSCRIPTION \
     -var ssh_key="$SSH_KEY"
