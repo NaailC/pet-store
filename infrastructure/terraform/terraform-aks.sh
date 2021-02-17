@@ -39,7 +39,6 @@ az role assignment create --assignee ${serviceprincipalclientid} \
 # rm terraform_*_linux_*.zip
 echo "CDing into terraform folder"
 cd ~
-cd /pet-store/infrastructure/terraform
 
 #generate SSH key
 
@@ -47,8 +46,10 @@ echo "GENERATING SSH SCRIPT"
 ssh-keygen -t rsa -b 4096 -N "" -q -f ~/.ssh/id_rsa -y
 SSH_KEY=$(cat ~/.ssh/id_rsa.pub)
 
-
+cd workspace
 echo $(pwd)
+cd pet-store/infrastructure/terraform
+
 #terraform
 terraform init
 
