@@ -59,6 +59,12 @@ terraform plan -var serviceprinciple_id=${serviceprincipalclientid} \
     -var subscription_id=${serviceprincipalsubscription} \
     -var ssh_key="$SSH_KEY"
 
+terraform apply --auto-approve -var serviceprinciple_id=${serviceprincipalclientid} \
+    -var serviceprinciple_key="${serviceprincipalpassword}" \
+    -var tenant_id=${serviceprincipaltenant} \
+    -var subscription_id=${serviceprincipalsubscription} \
+    -var ssh_key="$SSH_KEY"
+
 # terraform apply --auto-approve -var serviceprinciple_id=${serviceprincipalclientid} \
 #     -var serviceprinciple_key=${serviceprincipalpassword} \
 #     -var tenant_id=${serviceprincipaltenant} \
