@@ -13,6 +13,7 @@ pipeline{
             steps{
                 script{
                         sh "bash infrastructure/jenkins/scripts/install-dependencies2.sh"
+                        sh "az login --service-principal -u http://PetStoreSP -p FNaH_vCYu2lzwyw.ItyGyzQRC_CkQZB137 --tenant c682b43d-e2f2-4c3f-b0fd-8fa52d5001ed"
                 }
             }
         }
