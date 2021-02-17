@@ -8,6 +8,7 @@ pipeline{
         serviceprincipalpassword = credentials('sp-Password')
         serviceprincipaltenant = credentials('sp-Tenant')
         serviceprincipalclientid = credentials('client-id')
+        serviceprincipalclientsecret = credendials('client-secret')
         serviceprincipalsubscription = credentials('subscription-id')
     }
     stages{
