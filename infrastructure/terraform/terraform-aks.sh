@@ -13,7 +13,9 @@ sudo apt  install jq
 
 az account list -o table
 #export SUBSCRIPTION="$(az account show -o json | jq -r '.id')"
-az account set --subscription $serviceprincipalsubscription
+
+echo "SETTING ACCOUNT"
+az account set --subscription ${serviceprincipalsubscription}
 
 
 #creating service principal
@@ -24,8 +26,9 @@ az account set --subscription $serviceprincipalsubscription
 #export SERVICE_PRINCIPAL_SECRET="$(echo $SERVICE_PRINCIPAL_JSON | jq -r '.password')"
 
 # Grant contributor role over the subscription to our service principal
-az role assignment create --assignee $serviceprincipalclientid \
---scope "/subscriptions/$serviceprincipalsubscription" \
+echo "SETTING ROLE ASSIGNMENT"
+az role assignment create --assignee ${serviceprincipalclientid} \
+--scope "/subscriptions/${serviceprincipalsubscription}" \
 --role Contributor
 
 #terraform CLI - perhaps remove but it makes more sense to remove from jenkins script and add it to this script. But also may not matter whatsoever
@@ -34,24 +37,27 @@ az role assignment create --assignee $serviceprincipalclientid \
 # unzip terraform_*_linux_*.zip
 # sudo mv terraform /usr/local/bin/
 # rm terraform_*_linux_*.zip
-
+echo "CDing into terraform folder"
+cd 
 cd /pet-store/infrastructure/terraform
 
 #generate SSH key
-ssh-keygen -t rsa -b 4096 -N "" -q -f ~/.ssh/id_rsa
+
+echo "GENERATING SSH SCRIPT"
+ssh-keygen -t rsa -b 4096 -N "" -q -f ~/.ssh/id_rsa -y
 SSH_KEY=$(cat ~/.ssh/id_rsa.pub)
 
 #terraform
 terraform init
 
-terraform plan -var serviceprinciple_id=$serviceprincipalclientid \
-    -var serviceprinciple_key="$serviceprincipalpassword" \
-    -var tenant_id=$serviceprincipaltenant \
-    -var subscription_id=$serviceprincipalsubscription \
+terraform plan -var serviceprinciple_id=${serviceprincipalclientid} \
+    -var serviceprinciple_key=${serviceprincipalpassword} \
+    -var tenant_id=${serviceprincipaltenant} \
+    -var subscription_id=${serviceprincipalsubscription} \
     -var ssh_key="$SSH_KEY"
 
-terraform apply --auto-approve -var serviceprinciple_id=$serviceprincipalclientid \
-    -var serviceprinciple_key="$serviceprincipalpassword" \
-    -var tenant_id=$serviceprincipaltenant \
-    -var subscription_id=$serviceprincipalsubscription \
+terraform apply --auto-approve -var serviceprinciple_id=${serviceprincipalclientid} \
+    -var serviceprinciple_key=${serviceprincipalpassword} \
+    -var tenant_id=${serviceprincipaltenant} \
+    -var subscription_id=${serviceprincipalsubscription} \
     -var ssh_key="$SSH_KEY"
