@@ -36,7 +36,7 @@ pipeline{
         stage("Terraform Deploy"){
             steps{
                 script{
-                    sh "bash infrastucture/terraform/terraform-aks.sh"                    
+                    sh "bash infrastructure/terraform/terraform-aks.sh"                    
                 }
             }
         }
