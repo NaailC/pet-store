@@ -3,9 +3,9 @@ pipeline{
     environment{
         rollback = 'false'
         dockerhubcredentials = credentials('docker-credentials')
-        service-principal-url = credentials('sp-URL')
-        service-principal-password = credentials('sp-Password')
-        service-principal-tenant = credentials('sp-Tenant')
+        serviceprincipalurl = credentials('sp-URL')
+        serviceprincipalpassword = credentials('sp-Password')
+        serviceprincipaltenant = credentials('sp-Tenant')
         
     }
     stages{
