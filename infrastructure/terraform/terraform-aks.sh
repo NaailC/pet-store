@@ -46,8 +46,8 @@ echo "GENERATING SSH SCRIPT"
 ssh-keygen -t rsa -b 4096 -N "" -q -f ~/.ssh/id_rsa -y
 SSH_KEY=$(cat ~/.ssh/id_rsa.pub)
 
-cd workspace
 echo $(pwd)
+echo $(ls -a)
 cd pet-store/infrastructure/terraform
 
 #terraform
