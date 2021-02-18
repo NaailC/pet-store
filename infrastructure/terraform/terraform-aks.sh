@@ -68,7 +68,7 @@ cd .jenkins/workspace/pet-store-test/infrastructure/terraform/kubernetes/yaml
 # cd .jenkins/workspace/pet-store-test/infrastructure/
 
 
-az aks get-credentials --resource-group pet-clinic --name pet-clinic-kluster --overwrite-existing
+az aks get-credentials --resource-group pet-clinic --name pet-clinic-kluster
 
 
 
