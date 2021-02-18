@@ -122,7 +122,9 @@ A risk assessment was carried out, exploring possible risks, their likelihoods, 
 
 ## Front-end
 
-IMAGES REQUIRED OF THE FRONT-END
+![MicrosoftTeams-image](https://user-images.githubusercontent.com/74771160/108401442-41930a80-7214-11eb-841a-f02441918fe2.png)
+
+![MicrosoftTeams-image (1)](https://user-images.githubusercontent.com/74771160/108401451-435cce00-7214-11eb-999a-a685250b307c.png)
 
 ## Cost Estimations
 
