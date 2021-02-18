@@ -8,6 +8,7 @@
   - Application Architecture
   - Database Structure
   - CI/CD Pipeline
+- Tech Stack
 - Project Tracking
 - Risk Assessment
 - Front-End
@@ -35,6 +36,7 @@ The automation of the development workflows and the successful deployment of the
 
 ### Application Architecture
 
+<img width="454" alt="app structure" src="https://user-images.githubusercontent.com/74771160/108360421-1941e680-71e9-11eb-8311-5da1d88311f2.PNG">
 
 ### Database Structure
 Below is an ER diagram of the Petclinic app:
@@ -42,6 +44,59 @@ Below is an ER diagram of the Petclinic app:
 
 
 ### CI/CD Pipeline
+
+
+## Tech Stack 
+
+### Stategy 
+
+  - There were 3 stages to our strategy for
+
+  #### Stage 1 :
+  - Agree on a tech stack that everyone on the team would be able to be productive on. 
+  
+      - the problem with having divided competancy accross the tech stack is that as a team , it would make us less agile. By using technologies that everyone had a level of competency on we could react faster and be more flexible with our time and hopfully avoid any production Bottlenecks that may occur. 
+
+
+  #### Stage 2 : 
+    - Sprint towards a minimum viable product
+      
+
+  #### Stage 3 : 
+    - Expand on the Minimum viable product
+
+### Cloud Provider : Microsoft Azure
+
+  - Azure was our cloud provider that we used for our development and deployment of this application 
+
+### Version Control System : GIT
+
+  -  Git is a popular version control system . useful for keeping track of a collective codebase
+
+### Remote Repository : GITHUB
+
+  - GitHub is a popular remote repository service . Allowing different developers to push to the same codebase 
+
+### Containerisation : Docker / Docker-Compose 
+
+  - Docker is a containerisation tool used to build Images from Dockerfiles
+  - Docker- Compose is a container orchestration tool used to build and deploy containerised applications . In this project it was used to build and push the images required    for our application to the artifact repository
+
+### CI/CD Pipeline : Jenkins Build Server 
+
+- Jenkins was used as our build server , Every member of the team was familiar with how the jenkins pipeline works and how they are configured and deployed.
+
+### Artifact Repository : DockerHub
+- DockerHub is a repository for container images 
+- DockerHub was our Artifact Repository of choice for this project
+
+### Infrastucture Deployment : Terraform 
+
+- Terraform is an opensource infrastructure as code tool it was used to provsion the infrastructure neccessary to run our application on Azure 
+
+### Infrastructure Provisioning : Kubectl
+
+- Kubectl is the kubernetes commandline tool used for provisioning kubernetes clusters. kubernetes is compatible with docker and as a result is able to pull images to provision our terraform infrastructure from dockerhub onto our clusters on Azure 
 
 
 ## Project Tracking
