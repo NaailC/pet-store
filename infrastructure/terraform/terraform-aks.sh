@@ -75,6 +75,13 @@ curl -L https://github.com/kubernetes/kompose/releases/download/v1.22.0/kompose-
 chmod +x kompose
 sudo mv ./kompose /usr/local/bin/kompose
 
+cd ${workspace}
+echo $(pwd)
+echo $(ls -a)
+# cd .jenkins/workspace/pet-store-test/infrastructure/terraform/kubernetes/yaml
+cd .jenkins/workspace/pet-store-test/
+
+
 kompose -f docker-compose.yaml convert
 kubectl apply -f *.yaml
 
