@@ -64,13 +64,27 @@ terraform apply plan.out
 cd ${workspace}
 echo $(pwd)
 echo $(ls -a)
-cd .jenkins/workspace/pet-store-test/infrastructure/terraform/kubernetes/yaml
+# cd .jenkins/workspace/pet-store-test/infrastructure/terraform/kubernetes/yaml
+cd .jenkins/workspace/pet-store-test/infrastructure/
 
 
 az aks get-credentials --resource-group pet-clinic --name pet-clinic-kluster
-kubectl create -f nginx.yaml
-kubectl create -f frontend.yaml
-kubectl create -f backend.yaml
+
+echo "Installing KOMPOSE.IO FOR CONVERSION OF DOCKER-COMPOSE.YAML"
+curl -L https://github.com/kubernetes/kompose/releases/download/v1.22.0/kompose-linux-amd64 -o kompose
+chmod +x kompose
+sudo mv ./kompose /usr/local/bin/kompose
+
+kompose -f docker-compose.yaml convert
+kubectl apply -f *.yaml
+
+
+
+
+# kubectl create -f nginx.yaml
+# kubectl create -f frontend.yaml
+# kubectl create -f backend.yaml
+
 
 
 
