@@ -16,13 +16,14 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: mysql
+  labels: 
+    app: mysql
 spec:
     containers:
     - image: mustaphaa/mysql:5.7
       name: mysql
       ports:
       - containerPort: 3306
-        name: mysql
       env:
       - name: MYSQL_ROOT_PASSWORD
         valueFrom:
