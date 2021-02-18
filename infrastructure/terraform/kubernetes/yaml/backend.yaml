@@ -31,14 +31,3 @@ spec:
         image: mustaphaa/backend
         ports:
         - containerPort: 9966
-      env:
-      - name: SECRET_KEY
-        valueFrom:
-          secretKeyRef: 
-            name: petclinic
-            key: secretkey
-      - name: DATABASE_URI
-        valueFrom:
-          secretKeyRef:
-            name: petclinic
-            key: databaseURI

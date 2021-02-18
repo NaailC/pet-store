@@ -25,4 +25,6 @@ services:
     container_name: petclinic-db
     image: mustaphaa/mysql:5.7
     build: ./mysql
+    environment: 
+      MYSQL_ROOT_PASSWORD: petclinic
     
