@@ -59,7 +59,7 @@ Below is an ER diagram of the Petclinic app:
 
 
   #### Stage 2 : 
-    - Sprint towards a minimum viable product
+    * Sprint towards a minimum viable product
       
 
   #### Stage 3 : 
