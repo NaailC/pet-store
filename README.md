@@ -43,8 +43,22 @@ Below is an ER diagram of the Petclinic app:
 
 ### CI/CD Pipeline
 
-Justifying which tools we've used and why 
 
 ## Project Tracking
 
-Azure Boards were used for project tracking. Stand-ups were held every morning to discuss the work completed, the current blockers. Any issues encountered were listed on the board 
+Azure Boards were used for project tracking. Stand-ups were held every morning to discuss the work completed and any blockers. Any issues encountered were listed on the board and systematically labeled as work to be done, doing or done. 
+
+IMAGE OF TRACKING BOARD REQUIRED
+
+## Risk Assessment
+A risk assessment was carried out, exploring possible risks, their likelihoods, and mitigations:
+
+<img width="470" alt="RS1" src="https://user-images.githubusercontent.com/74771160/108356329-ec3f0500-71e3-11eb-9db1-0b29bac5be21.PNG">
+<img width="468" alt="RS2" src="https://user-images.githubusercontent.com/74771160/108356346-efd28c00-71e3-11eb-89ed-017c7448d0f5.PNG">
+
+## Front-end
+
+
+## Cost Estimations
+
+
