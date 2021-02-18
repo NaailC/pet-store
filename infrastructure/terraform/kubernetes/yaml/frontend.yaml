@@ -9,6 +9,7 @@ spec:
   - protocol: TCP
     port: 8080
     targetPort: 8080
+  type: ClusterIP
 
 ---
 
@@ -19,18 +20,14 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: pet-store
+      app: frontend
   template:
     metadata:
       labels:
-        app: pet-store
+        app: frontend
     spec:
       containers:
       - name: frontend
         image: mustaphaa/frontend
-        resources:
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
         ports:
         - containerPort: 8080

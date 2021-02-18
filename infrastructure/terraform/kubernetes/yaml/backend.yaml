@@ -9,6 +9,7 @@ spec:
   - protocol: TCP
     port: 9966
     targetPort: 9966
+  type: ClusterIP
 
 ---
 
@@ -19,18 +20,14 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: pet-store
+      app: backend
   template:
     metadata:
       labels:
-        app: pet-store
+        app: backend
     spec:
       containers:
       - name: backend
         image: mustaphaa/backend
-        resources:
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
         ports:
         - containerPort: 9966
