@@ -1,12 +1,12 @@
 #!/bin/bash
-az aks get-credentials --resource-group pet-clinic --name pet-clinic-cluster
+
 # Run Azure CLI
 # sudo snap install docker
 # sudo docker run -it --rm -v ${PWD}:/work -w /work --entrypoint /bin/sh mcr.microsoft.com/azure-cli:2.6.0
 
 # #login and follow prompts
 # az login
-sudo apt  install jq
+# sudo apt  install jq
 #export TENANT_ID="$(az account show | jq -r '.tenantId')"
 
 # view and select your subscription account
@@ -67,10 +67,7 @@ echo $(ls -a)
 cd .jenkins/workspace/pet-store-test/infrastructure/terraform/kubernetes/yaml
 # cd .jenkins/workspace/pet-store-test/infrastructure/
 
-
-az aks get-credentials --resource-group pet-clinic --name pet-clinic-kluster
-
-
+az aks get-credentials --resource-group pet-clinic --name pet-clinic-kluster --overwrite-existing
 
 kubectl create -f nginx.yaml
 kubectl create -f frontend.yaml
