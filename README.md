@@ -68,7 +68,9 @@ Below is an ER diagram of the Petclinic app:
 ## Tech Stack
 
 Below are the tools chosen and their roles in this project: 
+
 ![TecStack (1)](https://user-images.githubusercontent.com/74771160/108371597-d20e2280-71f5-11eb-9b67-c854cba50f5f.png)
+
 
 ### Cloud Provider : Microsoft Azure
 
