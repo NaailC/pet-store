@@ -1,4 +1,4 @@
-### DevOps Final Group Project
+# DevOps Final Group Project
 
 ## Table of Contents
 - Brief
