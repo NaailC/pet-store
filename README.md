@@ -29,7 +29,7 @@ Please find above the repositories for the well documented 'Spring Pet Clinic' a
 
 ### Requirements
 
-The focuses of this project lies on the automation of the development workflows and the successful deployment of the applicaiton. There is no restrictions or requirements on which tools to use although, the reasons for use of each tool should be discussed in an end-of-project presentation accompanied by a demonstration of the workflows developed. 
+The automation of the development workflows and the successful deployment of the applicaiton were the two main focuses on this project. There were no restrictions or requirements on which tools to use although, the reasons for use of each tool should be discussed in an end-of-project presentation accompanied by a demonstration of the workflows developed. 
 
 ## Architecture 
 
