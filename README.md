@@ -44,4 +44,6 @@ Below is an ER diagram of the Petclinic app:
 ### CI/CD Pipeline
 
 
+## Project Tracking
 
+Azure Boards were used for project tracking. Stand-ups were held every morning to discuss the work completed, the current blockers. Any issues encountered were listed on the board 
