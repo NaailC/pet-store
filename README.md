@@ -58,12 +58,10 @@ Below is an ER diagram of the Petclinic app:
       - the problem with having divided competancy accross the tech stack is that as a team , it would make us less agile. By using technologies that everyone had a level of competency on we could react faster and be more flexible with our time and hopfully avoid any production Bottlenecks that may occur. 
 
 
-  #### Stage 2 : 
-    * Sprint towards a minimum viable product
+  #### Stage 2 : Sprint towards a minimum viable product
       
 
-  #### Stage 3 : 
-    - Expand on the Minimum viable product
+  #### Stage 3 : Expand on the Minimum viable product
 
 
 ## Tech Stack
