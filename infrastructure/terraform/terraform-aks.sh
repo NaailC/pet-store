@@ -79,11 +79,11 @@ cd ${workspace}
 echo $(pwd)
 echo $(ls -a)
 # cd .jenkins/workspace/pet-store-test/infrastructure/terraform/kubernetes/yaml
-cd .jenkins/workspace/pet-store-test/
+cd .jenkins/workspace/pet-store-test
 
 
 kompose -f docker-compose.yaml convert
-kubectl apply *.yaml
+kubectl apply -k *.yaml
 
 
 
