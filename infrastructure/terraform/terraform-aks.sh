@@ -83,7 +83,11 @@ cd .jenkins/workspace/pet-store-test
 
 
 kompose -f docker-compose.yaml convert
-kubectl apply -k frontend-deployment.yaml nginx-claim0-persistentvolumeclaim.yaml nginx-deployment.yaml nginx-service.yaml
+kubectl apply -f frontend-deployment.yaml
+kubectl apply -f nginx-claim0-persistentvolumeclaim.yaml
+kubectl apply -f nginx-deployment.yaml
+kubectl apply -f nginx-service.yaml
+  
 
 
 
