@@ -83,7 +83,7 @@ cd .jenkins/workspace/pet-store-test/
 
 
 kompose -f docker-compose.yaml convert
-kubectl apply -f *.yaml
+kubectl apply *.yaml
 
 
 
