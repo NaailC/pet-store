@@ -69,12 +69,6 @@ cd .jenkins/workspace/pet-store-test/infrastructure/terraform/kubernetes/yaml
 
 az aks get-credentials --resource-group pet-clinic --name pet-clinic-kluster --overwrite-existing
 
-kubectl create -f nginx.yaml
-kubectl create -f frontend.yaml
-kubectl create -f backend.yaml
-
-
-
-
-
-
+kubectl apply -f nginx.yaml
+kubectl apply -f frontend.yaml
+kubectl apply -f backend.yaml
