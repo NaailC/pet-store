@@ -64,37 +64,37 @@ terraform apply plan.out
 cd ${workspace}
 echo $(pwd)
 echo $(ls -a)
-# cd .jenkins/workspace/pet-store-test/infrastructure/terraform/kubernetes/yaml
-cd .jenkins/workspace/pet-store-test/infrastructure/
+cd .jenkins/workspace/pet-store-test/infrastructure/terraform/kubernetes/yaml
+# cd .jenkins/workspace/pet-store-test/infrastructure/
 
 
 az aks get-credentials --resource-group pet-clinic --name pet-clinic-kluster
 
-echo "Installing KOMPOSE.IO FOR CONVERSION OF DOCKER-COMPOSE.YAML"
-curl -L https://github.com/kubernetes/kompose/releases/download/v1.22.0/kompose-linux-amd64 -o kompose
-chmod +x kompose
-sudo mv ./kompose /usr/local/bin/kompose
+# echo "Installing KOMPOSE.IO FOR CONVERSION OF DOCKER-COMPOSE.YAML"
+# curl -L https://github.com/kubernetes/kompose/releases/download/v1.22.0/kompose-linux-amd64 -o kompose
+# chmod +x kompose
+# sudo mv ./kompose /usr/local/bin/kompose
 
-cd ${workspace}
-echo $(pwd)
-echo $(ls -a)
+# cd ${workspace}
+# echo $(pwd)
+# echo $(ls -a)
 # cd .jenkins/workspace/pet-store-test/infrastructure/terraform/kubernetes/yaml
-cd .jenkins/workspace/pet-store-test
+#cd .jenkins/workspace/pet-store-test
 
 
-kompose -f docker-compose.yaml convert
-kubectl apply -f frontend-deployment.yaml
-kubectl apply -f nginx-claim0-persistentvolumeclaim.yaml
-kubectl apply -f nginx-deployment.yaml
-kubectl apply -f nginx-service.yaml
+# kompose -f docker-compose.yaml convert
+# kubectl apply -f frontend-deployment.yaml
+# kubectl apply -f nginx-claim0-persistentvolumeclaim.yaml
+# kubectl apply -f nginx-deployment.yaml
+# kubectl apply -f nginx-service.yaml
   
 
 
 
 
-# kubectl create -f nginx.yaml
-# kubectl create -f frontend.yaml
-# kubectl create -f backend.yaml
+kubectl create -f nginx.yaml
+kubectl create -f frontend.yaml
+kubectl create -f backend.yaml
 
 
 

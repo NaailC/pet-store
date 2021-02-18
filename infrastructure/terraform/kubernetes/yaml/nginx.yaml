@@ -54,9 +54,12 @@ metadata:
 data:
   default.conf: |
     server {
-        listen 80;
-        location / {
-            return 200 "Hello from NGINX\n";
+     listen 80;
+    location / {
+        proxy_pass http://frontend:8080/petclinic/;
+    }
+    location /petclinic/api/ {
+            proxy_pass http://backend:9966/petclinic/api/;
         }
     }
 
