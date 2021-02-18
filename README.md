@@ -43,6 +43,7 @@ Below is an ER diagram of the Petclinic app:
 
 ### CI/CD Pipeline
 
+Justifying which tools we've used and why 
 
 ## Project Tracking
 
