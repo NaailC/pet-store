@@ -31,3 +31,12 @@ module "virtual_network" {
   location = var.location
   project_name = var.project_name
 }
+
+module "sql" {
+  source = "./modules/sql"
+  resource_group = var.name
+  location = var.location
+  project_name = var.project_name
+  administrator_login = var.adminlogin
+  administrator_login_password = var.adminpassword
+}

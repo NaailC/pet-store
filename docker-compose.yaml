@@ -20,4 +20,9 @@ services:
     container_name: backend
     image: mustaphaa/backend
     build: ./backend
+  
+  sqldatabase:
+    container_name: petclinic-db
+    image: mustaphaa/mysql:5.7
+    build: ./mysql
     

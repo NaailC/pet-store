@@ -9,6 +9,7 @@ pipeline{
         serviceprincipaltenant = credentials('sp-Tenant')
         serviceprincipalclientid = credentials('client-id')
         serviceprincipalsubscription = credentials('subscription-id')
+        MYSQL_ROOT_PASSWORD = credentials('MYSQL_ROOT_PASSWORD')
     }
      stages{
         stage("Dependencies"){

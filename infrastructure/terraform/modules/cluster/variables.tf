@@ -1,9 +1,5 @@
-#local variables 
 variable "name" {}
-
 variable "location" {}
-
-#passed variables 
 variable "kubernetes_version" {}
 variable "serviceprinciple_id" {}
 variable "serviceprinciple_key" {}
