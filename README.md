@@ -33,3 +33,15 @@ The focuses of this project lies on the automation of the development workflows 
 
 ## Architecture 
 
+### Application Architecture
+
+
+### Database Structure
+Below is an ER diagram of the Petclinic app:
+![petclinic-ermodel](https://user-images.githubusercontent.com/74771160/108348381-a2512180-71d9-11eb-926b-d410d99dc94e.png)
+
+
+### CI/CD Pipeline
+
+
+
