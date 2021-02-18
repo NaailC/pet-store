@@ -8,6 +8,7 @@
   - Application Architecture
   - Database Structure
   - CI/CD Pipeline
+- Strategy
 - Tech Stack
 - Project Tracking
 - Risk Assessment
@@ -46,9 +47,8 @@ Below is an ER diagram of the Petclinic app:
 ### CI/CD Pipeline
 
 
-## Tech Stack 
 
-### Stategy 
+## Stategy 
 
   - There were 3 stages to our strategy for
 
@@ -64,6 +64,11 @@ Below is an ER diagram of the Petclinic app:
 
   #### Stage 3 : 
     - Expand on the Minimum viable product
+
+
+## Tech Stack
+
+Below are the tools chosen and their roles in this project: 
 
 ### Cloud Provider : Microsoft Azure
 
