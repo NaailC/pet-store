@@ -46,15 +46,17 @@ Below is an ER diagram of the Petclinic app:
 
 ## Project Tracking
 
-Azure Boards were used for project tracking. Stand-ups were held every morning to discuss the work completed and any blockers. Any issues encountered were listed on the board and systematically labeled as work to be done, doing or done. 
+Azure Boards were used for project tracking. At the start of the project, an initial Sprint Planning meeting was held. A scrum master was chosen, and the product backlog was filled out with all the functionalities desired in the final product to be completed for the Sprint. Discussions held in this meeting also led to the finalisation on which tools should be used to develop workflows and carry out app deployment. 
+
+Following the agile scrum framework, daily stand-ups held with the scrum team, orchestrated by the scrum master. In this way, every morning team members communicated to the team the work they had completed on the previous working day and any blockers experienced in the process. Issues encountered were listed on the board and systematically labeled as work to be done, doing or done - and moved along accordingly. 
 
 <img width="517" alt="boards" src="https://user-images.githubusercontent.com/74771160/108357162-fa415580-71e4-11eb-9c3d-bf363f1f274f.PNG">
 
 ## Risk Assessment
-A risk assessment was carried out, exploring possible risks, their likelihoods, and mitigations:
+A risk assessment was carried out, exploring possible risks, their likelihoods, and mitigations. A colour-coded risk matrix was used to illustrate the severity of risks. This can be seen documentated below:
 
-<img width="470" alt="RS1" src="https://user-images.githubusercontent.com/74771160/108356329-ec3f0500-71e3-11eb-9db1-0b29bac5be21.PNG">
-<img width="468" alt="RS2" src="https://user-images.githubusercontent.com/74771160/108356346-efd28c00-71e3-11eb-89ed-017c7448d0f5.PNG">
+<img width="600" alt="RS1" src="https://user-images.githubusercontent.com/74771160/108356329-ec3f0500-71e3-11eb-9db1-0b29bac5be21.PNG">
+<img width="600" alt="RS2" src="https://user-images.githubusercontent.com/74771160/108356346-efd28c00-71e3-11eb-89ed-017c7448d0f5.PNG">
 
 ## Front-end
 
