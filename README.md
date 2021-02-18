@@ -46,8 +46,7 @@ Below is an ER diagram of the Petclinic app:
 
 ### CI/CD Pipeline
 
-![CICD (1)](https://user-images.githubusercontent.com/74771160/108369783-db968b00-71f3-11eb-91d7-07e394947c75.png)
-
+![CICDPIPELINE (2)](https://user-images.githubusercontent.com/74771160/108403413-9768b200-7216-11eb-9c38-77dd59e58d2c.png)
 
 ## Stategy 
 
