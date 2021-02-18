@@ -48,7 +48,7 @@ Below is an ER diagram of the Petclinic app:
 
 Azure Boards were used for project tracking. Stand-ups were held every morning to discuss the work completed and any blockers. Any issues encountered were listed on the board and systematically labeled as work to be done, doing or done. 
 
-IMAGE OF TRACKING BOARD REQUIRED
+<img width="517" alt="boards" src="https://user-images.githubusercontent.com/74771160/108357162-fa415580-71e4-11eb-9c3d-bf363f1f274f.PNG">
 
 ## Risk Assessment
 A risk assessment was carried out, exploring possible risks, their likelihoods, and mitigations:
@@ -58,7 +58,11 @@ A risk assessment was carried out, exploring possible risks, their likelihoods, 
 
 ## Front-end
 
+IMAGES REQUIRED OF THE FRONT-END
 
 ## Cost Estimations
+
+
+## Future Improvements 
 
 
