@@ -7,8 +7,8 @@ spec:
     app: backend
   ports: 
   - protocol: TCP
-    port: 5001
-    targetPort: 5001
+    port: 9966
+    targetPort: 9966
 
 ---
 
@@ -33,26 +33,4 @@ spec:
             memory: "128Mi"
             cpu: "500m"
         ports:
-        - containerPort: 5001
-        volumeMounts:
-          - name: backend-config
-            mountPath: /etc/backend/conf.d
-      volumes:
-      - name: backend-config
-        configMap:
-          name: backend-config
-
----
-
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: backend-config
-data:
-  default.conf: |
-    server {
-        listen 5001;
-        location / {
-            return 200 "";
-        }
-    }
+        - containerPort: 9966

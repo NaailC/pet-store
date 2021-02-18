@@ -7,8 +7,8 @@ spec:
     app: frontend
   ports: 
   - protocol: TCP
-    port: 5000
-    targetPort: 5000
+    port: 8080
+    targetPort: 8080
 
 ---
 
@@ -33,26 +33,4 @@ spec:
             memory: "128Mi"
             cpu: "500m"
         ports:
-        - containerPort: 5000
-        volumeMounts:
-          - name: frontend-config
-            mountPath: /etc/frontend/conf.d
-      volumes:
-      - name: frontend-config
-        configMap:
-          name: frontend-config
-
----
-
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: frontend-config
-data:
-  default.conf: |
-    server {
-        listen 5000;
-        location / {
-            return 200 "";
-        }
-    }
+        - containerPort: 8080
