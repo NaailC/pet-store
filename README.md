@@ -135,7 +135,7 @@ A big part of this project was monitoring the monthly costs of the resources bei
 
 ## Future Improvements 
 
-But if given more time, the next step would’ve been to:
+If given more time, the next step would’ve been to:
 - allow multiple Environment Support to allow a developer to test their new features on an environment before merging their changes to the main branch
 - write integration tests and aim for high coverage
 
