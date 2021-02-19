@@ -15,6 +15,7 @@
 - Front-End
 - Cost Estimations
 - Future Improvements
+- Contributors
 
 ## Brief
 
@@ -116,7 +117,7 @@ Following the agile scrum framework, daily stand-ups held with the scrum team, o
 ## Risk Assessment
 A risk assessment was carried out, exploring possible risks, their likelihoods, and mitigations. A colour-coded risk matrix was used to illustrate the severity of risks. This can be seen documentated below:
 
-<img width="800" alt="RS1" src="https://user-images.githubusercontent.com/74771160/108356329-ec3f0500-71e3-11eb-9db1-0b29bac5be21.PNG">
+<img width="800" alt="RS1" src="https://user-images.githubusercontent.com/74771160/108482897-fae3f580-7291-11eb-9235-c2f343cc7f43.PNG">
 <img width="800" alt="RS2" src="https://user-images.githubusercontent.com/74771160/108356346-efd28c00-71e3-11eb-89ed-017c7448d0f5.PNG">
 
 ## Front-end
@@ -134,4 +135,14 @@ A big part of this project was monitoring the monthly costs of the resources bei
 
 ## Future Improvements 
 
+But if given more time, the next step would’ve been to:
+- allow multiple Environment Support to allow a developer to test their new features on an environment before merging their changes to the main branch
+- write integration tests and aim for high coverage
 
+## Contributors 
+
+Max Pattman
+Abhyas Giri
+Naail Chowdhury
+Mustapha Abari-Jimoh
+Tonny Okech
