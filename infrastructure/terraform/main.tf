@@ -17,14 +17,6 @@ module "cluster" {
   resource_group        = var.resource_group
 }
 
-#module "k8s" {
-#    source = "./modules/k8s/"
-#  host                  = "${module.cluster.host}"
-#  client_certificate    = "${base64decode(module.cluster.client_certificate)}"
-#  client_key            = "${base64decode(module.cluster.client_key)}"
-#  cluster_ca_certificate= "${base64decode(module.cluster.cluster_ca_certificate)}"  
-#}
-
 module "virtual_network" {
   source = "./modules/vnet"
   resource_group = var.name

@@ -3,7 +3,6 @@ pipeline{
     environment{
         rollback = 'false'
         dockerhubcredentials = credentials('docker-credentials')
-        // azure-credentials = credentials('azure-credentials')
         serviceprincipalurl = credentials('sp-URL')
         serviceprincipalpassword = credentials('sp-Password')
         serviceprincipaltenant = credentials('sp-Tenant')
@@ -15,7 +14,7 @@ pipeline{
         stage("Dependencies"){
             steps{
                 script{
-                        sh "bash infrastructure/jenkins/scripts/install-dependencies2.sh"
+                        sh "bash infrastructure/jenkins/scripts/install-dependencies.sh"
                 }
             }
         }
