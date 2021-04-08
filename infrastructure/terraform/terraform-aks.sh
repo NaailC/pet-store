@@ -72,3 +72,6 @@ az aks get-credentials --resource-group pet-clinic --name pet-clinic-kluster --o
 kubectl apply -f nginx.yaml
 kubectl apply -f frontend.yaml
 kubectl apply -f backend.yaml
+
+sed -e 's,{{MYSQL_ROOT_PASSWORD}},'$MYSQL_ROOT_PASSWORD',g;' secrets.yaml | kubectl apply -f -
+kubectl apply -f sql.yaml

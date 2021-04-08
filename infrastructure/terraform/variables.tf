@@ -10,6 +10,12 @@ variable "tenant_id" {
 variable "subscription_id" {
 }
 
+variable "spring_password" {
+}
+
+variable "spring_login" {
+}
+
 variable "name" {
   default = "pet-clinic"
 }
@@ -40,3 +46,4 @@ variable "kubernetes_version" {
 variable "vm_size" {
     default = "Standard_E2s"
 }
+
